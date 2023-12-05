@@ -1,0 +1,28 @@
+name: Use StackSpot Middle Flow
+
+on:
+  workflow_dispatch:
+    inputs:
+      repository-url:
+        required: false
+      execution-id:
+        required: true
+      debug:
+        type: choice
+        options:
+          - true
+          - false
+
+jobs:
+  stackspot-middle-flow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stack Spot Middle Flow
+        uses: ./
+        with:
+          debug: "${{ github.event.inputs.debug }}"
+          repository-url: "${{ github.event.inputs.repository-url }}"
+          execution-id: "${{ github.event.inputs.execution-id }}"
+          client_id: "${{ secrets.client_id }}"
+          client_secret: "${{ secrets.client_secret }}"
+          realm: "${{ secrets.realm }}"
