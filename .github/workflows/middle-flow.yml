@@ -17,6 +17,8 @@ jobs:
   stackspot-middle-flow:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Stack Spot Middle Flow
         uses: ./
         with:
