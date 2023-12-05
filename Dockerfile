@@ -1,7 +1,7 @@
 FROM ubuntu
 
 RUN apt-get update \
-    && apt-get install -y curl git uuid-runtime
+    && apt-get install -y curl git uuid-runtime jq
 
 RUN adduser --disabled-password --gecos '' stk
 RUN uuid=$(uuidgen) \
