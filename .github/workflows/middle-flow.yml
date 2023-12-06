@@ -1,4 +1,4 @@
-name: Use StackSpot Middle Flow
+name: Use StackSpot Workfflow
 
 on:
   workflow_dispatch:
@@ -14,13 +14,13 @@ on:
           - false
 
 jobs:
-  stackspot-middle-flow:
+  stackspot-workfflow:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Stack Spot Middle Flow
-        uses: ./
+      - name: Stack Spot Workfflow
+        uses: ./github-actions
         with:
           execution-id: "${{ github.event.inputs.execution-id }}"
           client-id: "${{ secrets.CLIENT_ID }}"

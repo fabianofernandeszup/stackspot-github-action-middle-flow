@@ -1,6 +1,6 @@
-name: "Stack Spot Middle Flow"
-description: 'Stack Spot Middle Flow'
-author: "Stack Spot"
+name: "StackSpot Workfflow"
+description: 'StackSpot Workfflow'
+author: "StackSpot"
 branding:
   icon: "truck"
   color: "purple"

@@ -1,12 +1,12 @@
-# StackSpot Middle Flow Action
+# StackSpot Workfflow Action
 
-This action execute StackSpot Middle Flow
+This action execute StackSpot Workfflow
 
 ## Example usage
 
 ```yaml
-- name: Stack Spot Middle Flow
-  uses: stackspot/stackspot-github-action-middle-flow
+- name: Stack Spot Workfflow
+  uses: stackspot/github-action-stackspot-workfflow
   with:
     execution-id: "${{ github.event.inputs.execution-id }}"
     client-id: "${{ secrets.CLIENT_ID }}"
