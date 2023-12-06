@@ -30,9 +30,7 @@ jobs:
           repository-url: "${{ github.event.inputs.repository-url }}"
       - name: Logs CLI
         if: failure()
-        run: |
-          sudo cat /home/runner/work/_temp/_github_home/.stk/logs/logs.log
+        run: sudo cat /home/runner/work/_temp/_github_home/.stk/logs/logs.log
       - name: Debug Http
-        if: inputs.debug
-        run:
-          sudo cat /home/runner/work/_temp/_github_home/.stk/http/debug.txt
+        if: "${{ inputs.debug == 'true' }}"
+        run: sudo cat /home/runner/work/_temp/_github_home/.stk/http/debug.txt
