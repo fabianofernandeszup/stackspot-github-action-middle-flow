@@ -6,9 +6,9 @@ RUN apt-get update \
 RUN adduser --disabled-password --gecos '' stk
 RUN uuid=$(uuidgen) \
 && echo ${uuid} > /etc/machine-id
-USER stk
+USER root
 
-WORKDIR /home/stk
+WORKDIR /home/root
 
 ENV LANG C.UTF-8
 ENV LANGUAGE C.UTF-8

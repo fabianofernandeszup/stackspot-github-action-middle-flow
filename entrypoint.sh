@@ -20,17 +20,7 @@ secret_stk_login=$(curl --location --request POST "https://idm.stackspot.com/rea
     --data-urlencode "grant_type=client_credentials" \
     --data-urlencode "client_secret=$client_secret" | jq -r .access_token)
 
-cd /github/home
-touch test.sh
-ls
-
-cd /github/workspace
-touch test.sh
-ls
-
 http_code=$(curl -s -o script.sh -w '%{http_code}' https://workflow-api.v1.stackspot.com/workflows/$execution_id --header "Authorization: Bearer $secret_stk_login";)
-pwd
-ls -lha
 if [[ "$http_code" -ne "200" ]]; then
     echo "------------------------------------------------------------------------------------------"
     echo "---------------------------------------- Debug Starting ----------------------------------"
