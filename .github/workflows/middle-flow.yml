@@ -32,7 +32,8 @@ jobs:
         if: failure()
         run: sudo cat /home/runner/work/_temp/_github_home/.stk/logs/logs.log
       - name: Debug
+        if: always()
         run: echo ${{ inputs.debug }}
       - name: Debug Http
-        if: "${{ inputs.debug == 'true' }}"
+        if: always() && "${{ inputs.debug == 'true' }}"
         run: sudo cat /home/runner/work/_temp/_github_home/.stk/http/debug.txt
