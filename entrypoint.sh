@@ -1,18 +1,15 @@
 #!/bin/bash -l
 
-echo "execution-id $1"
-echo "client-id $2"
-echo "client-secret $3"
-echo "realm $4"
-echo "debug $5"
-echo "repository-url $6"
-
-execution_id="01HGY7RRBKB5HVBSZ0TSVQKGDH"
+execution_id=$1
 client_id=$2
 client_secret=$3
 realm=$4
 debug=$5
 repo_url=$6
+
+if [[ "$debug" -ne "true" ]]; then
+  export HTTP_ENABLE_FILE_DEBUG=true
+fi
 
 secret_stk_login=$(curl --location --request POST "https://idm.stackspot.com/realms/$realm/protocol/openid-connect/token" \
     --header "Content-Type: application/x-www-form-urlencoded" \

@@ -2,7 +2,7 @@ name: "Stack Spot Middle Flow"
 description: 'Stack Spot Middle Flow'
 author: "Stack Spot"
 branding:
-  icon: "ferramenta"
+  icon: "tool"
   color: "purple"
 runs:
   using: 'docker'
@@ -18,7 +18,6 @@ inputs:
   execution-id:
     description: "Execution ID"
     required: true
-    default: "01HGY7RRBKB5HVBSZ0TSVQKGDH"
   client-id:
     description: "Client ID StackSpot"
     required: true

@@ -1,14 +1,12 @@
 name: Use StackSpot Middle Flow
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
     inputs:
-      repository-url:
-        required: false
       execution-id:
         required: true
+      repository-url:
+        required: false
       debug:
         type: choice
         options:
@@ -30,3 +28,8 @@ jobs:
           realm: "${{ secrets.REALM }}"
           debug: "${{ github.event.inputs.debug }}"
           repository-url: "${{ github.event.inputs.repository-url }}"
+      - name: Debug
+        if: failure()
+        run: |
+          echo $HOME
+          ls -lah $HOME
