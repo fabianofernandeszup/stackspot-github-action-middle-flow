@@ -23,7 +23,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Stack Spot Middle Flow
         uses: ./
-        options: --user root
         with:
           execution-id: "${{ github.event.inputs.execution-id }}"
           client-id: "${{ secrets.CLIENT_ID }}"
