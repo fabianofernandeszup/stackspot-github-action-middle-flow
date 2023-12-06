@@ -30,7 +30,11 @@ jobs:
           repository-url: "${{ github.event.inputs.repository-url }}"
       - name: Logs CLI
         if: failure()
-        run: cat /home/runner/work/_temp/_github_home/.stk/logs/logs.log
+        run: |
+          ls -lha /home/runner/work/_temp/_github_home/.stk/
+          cat /home/runner/work/_temp/_github_home/.stk/logs/logs.log
       - name: Debug Http
         if: inputs.debug
-        run: cat /home/runner/work/_temp/_github_home/.stk/http/debug.txt
+        run:
+          ls -lha /home/runner/work/_temp/_github_home/.stk/http
+          cat /home/runner/work/_temp/_github_home/.stk/http/debug.txt
