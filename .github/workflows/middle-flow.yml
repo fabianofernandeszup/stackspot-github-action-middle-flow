@@ -30,6 +30,6 @@ jobs:
           repository-url: "${{ github.event.inputs.repository-url }}"
       - name: Debug
         run: |
-          echo $HOME
-          pwd
-          ls -lah $HOME
+          echo ${{ github.home }}
+          cd /home/runner/work/_temp/_github_home
+          ls -lah
