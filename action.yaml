@@ -18,6 +18,7 @@ inputs:
   execution-id:
     description: "Execution ID"
     required: true
+    default: "01HGY7RRBKB5HVBSZ0TSVQKGDH"
   client-id:
     description: "Client ID StackSpot"
     required: true
