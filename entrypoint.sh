@@ -7,7 +7,7 @@ realm=$4
 debug=$5
 repo_url=$6
 
-if [[ "$debug" -ne "true" ]]; then
+if [[ "$debug" -ne "false" ]]; then
   export HTTP_ENABLE_FILE_DEBUG=true
 fi
 
