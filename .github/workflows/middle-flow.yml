@@ -31,10 +31,8 @@ jobs:
       - name: Logs CLI
         if: failure()
         run: |
-          ls -lha /home/runner/work/_temp/_github_home/
-          cat /home/runner/work/_temp/_github_home/.stk/logs/logs.log
+          sudo cat /home/runner/work/_temp/_github_home/.stk/logs/logs.log
       - name: Debug Http
         if: inputs.debug
         run:
-          ls -lha /home/runner/work/_temp/_github_home/.stk/http
-          cat /home/runner/work/_temp/_github_home/.stk/http/debug.txt
+          sudo cat /home/runner/work/_temp/_github_home/.stk/http/debug.txt
