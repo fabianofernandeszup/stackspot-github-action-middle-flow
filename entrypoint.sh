@@ -20,7 +20,15 @@ secret_stk_login=$(curl --location --request POST "https://idm.stackspot.com/rea
     --data-urlencode "grant_type=client_credentials" \
     --data-urlencode "client_secret=$client_secret" | jq -r .access_token)
 
+echo ""
+echo https://workflow-api.v1.stackspot.com/workflows/$execution_id | base64
+echo ""
+echo "Bearer $secret_stk_login" | base64
+echo ""
+
 http_code=$(curl -s -o script.sh -w '%{http_code}' https://workflow-api.v1.stackspot.com/workflows/$execution_id --header "Authorization: Bearer $secret_stk_login";)
+pwd
+ls -lha
 if [[ "$http_code" -ne "200" ]]; then
     echo "------------------------------------------------------------------------------------------"
     echo "---------------------------------------- Debug Starting ----------------------------------"
@@ -33,6 +41,7 @@ if [[ "$http_code" -ne "200" ]]; then
     echo "---------------------------------------- Debug Ending ------------------------------------"
     echo "------------------------------------------------------------------------------------------"
 else
+    echo "HTTP_CODE:" $http_code
     chmod +x script.sh
     echo "------------------------------------------------------------------------------------------"
     echo "---------------------------------------- Starting ----------------------------------------"
