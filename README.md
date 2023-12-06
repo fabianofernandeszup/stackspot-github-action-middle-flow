@@ -14,4 +14,10 @@ This action execute StackSpot Middle Flow
     realm: "${{ secrets.REALM }}"
     debug: "${{ github.event.inputs.debug }}"
     repository-url: "${{ github.event.inputs.repository-url }}"
+- name: Logs CLI
+  if: failure()
+  run: sudo cat /home/runner/work/_temp/_github_home/.stk/logs/logs.log
+- name: Debug Http
+  if: "${{ inputs.debug == 'true' && always() }}"
+  run: sudo cat /home/runner/work/_temp/_github_home/.stk/debug/http.txt
 ```
