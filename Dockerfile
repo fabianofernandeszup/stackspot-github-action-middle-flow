@@ -14,6 +14,7 @@ ENV LANG C.UTF-8
 ENV LANGUAGE C.UTF-8
 ENV LC_ALL C.UTF-8
 ENV PYTHONIOENCODING utf-8
+ENV GIT_SSL_NO_VERIFY 1
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh

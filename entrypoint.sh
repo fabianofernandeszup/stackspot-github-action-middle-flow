@@ -16,7 +16,7 @@ secret_stk_login=$(curl --location --request POST "https://idm.stackspot.com/rea
     --header "Content-Type: application/x-www-form-urlencoded" \
     --data-urlencode "client_id=$client_id" \
     --data-urlencode "grant_type=client_credentials" \
-    --data-urlencode "client_secret=$client_secret" | jq .access_token)
+    --data-urlencode "client_secret=$client_secret" | jq -r .access_token)
 
 http_code=$(curl -s -o script.sh -w '%{http_code}' https://workflow-api.v1.stackspot.com/workflows/$execution_id --header "Authorization: Bearer $secret_stk_login";)
 if [[ "$http_code" -ne "200" ]]; then
