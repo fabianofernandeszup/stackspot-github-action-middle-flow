@@ -19,6 +19,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Debug Http
+        if: "${{ inputs.debug == 'true' }}"
+        run: echo DEBUGE
       - name: Stack Spot Middle Flow
         uses: ./
         with:
@@ -35,5 +38,5 @@ jobs:
         if: always()
         run: echo ${{ inputs.debug }}
       - name: Debug Http
-        if: always() && "${{ inputs.debug == 'true' }}"
+        if: "${{ inputs.debug == 'true' && always() }}"
         run: sudo cat /home/runner/work/_temp/_github_home/.stk/http/debug.txt
