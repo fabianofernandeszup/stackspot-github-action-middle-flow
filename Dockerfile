@@ -8,7 +8,7 @@ RUN uuid=$(uuidgen) \
 && echo ${uuid} > /etc/machine-id
 USER root
 
-WORKDIR /home/root
+WORKDIR /github/home
 
 ENV LANG C.UTF-8
 ENV LANGUAGE C.UTF-8
