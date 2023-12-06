@@ -29,7 +29,5 @@ jobs:
           debug: "${{ github.event.inputs.debug }}"
           repository-url: "${{ github.event.inputs.repository-url }}"
       - name: Debug
-        run: |
-          echo ${{ github.home }}
-          cd /home/runner/work/_temp/_github_home
-          ls -lah
+        if: failure()
+        run: cat /home/runner/work/_temp/_github_home/.stk/logs/logs.log
