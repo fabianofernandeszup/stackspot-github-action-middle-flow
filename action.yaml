@@ -7,6 +7,7 @@ branding:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  options: --user root
   args:
     - ${{ inputs.execution-id }}
     - ${{ inputs.client-id }}
