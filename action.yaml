@@ -15,9 +15,6 @@ runs:
     - ${{ inputs.debug }}
     - ${{ inputs.repository-url }}
 inputs:
-  repository-url:
-    description: "Repository URL to commit files"
-    required: false
   execution-id:
     description: "Execution ID"
     required: true
@@ -30,3 +27,9 @@ inputs:
   realm:
     description: "Realm StackSpot"
     required: true
+  debug:
+    description: "Debug Execution"
+    required: true
+  repository-url:
+    description: "Repository URL to commit files"
+    required: false

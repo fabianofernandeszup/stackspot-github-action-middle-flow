@@ -11,6 +11,8 @@ execution_id=$1
 client_id=$2
 client_secret=$3
 realm=$4
+debug=$5
+repo_url=$6
 
 secret_stk_login=$(curl --location --request POST "https://idm.stackspot.com/realms/$realm/protocol/openid-connect/token" \
     --header "Content-Type: application/x-www-form-urlencoded" \

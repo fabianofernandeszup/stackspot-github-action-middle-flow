@@ -22,9 +22,9 @@ jobs:
       - name: Stack Spot Middle Flow
         uses: ./
         with:
-          debug: "${{ github.event.inputs.debug }}"
-          repository-url: "${{ github.event.inputs.repository-url }}"
           execution-id: "${{ github.event.inputs.execution-id }}"
           client-id: "${{ secrets.CLIENT_ID }}"
           client-secret: "${{ secrets.CLIENT_SECRET }}"
           realm: "${{ secrets.REALM }}"
+          debug: "${{ github.event.inputs.debug }}"
+          repository-url: "${{ github.event.inputs.repository-url }}"
