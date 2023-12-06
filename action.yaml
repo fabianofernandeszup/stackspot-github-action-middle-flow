@@ -2,7 +2,7 @@ name: "Stack Spot Middle Flow"
 description: 'Stack Spot Middle Flow'
 author: "Stack Spot"
 branding:
-  icon: "tool"
+  icon: "truck"
   color: "purple"
 runs:
   using: 'docker'
