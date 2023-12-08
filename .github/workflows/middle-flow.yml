@@ -1,6 +1,8 @@
 name: Use StackSpot Workflow
 
 on:
+  push:
+    [main]
   workflow_dispatch:
     inputs:
       execution-id:
@@ -20,8 +22,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - run: ls -lha
+
       - name: Stack Spot Workflow
-        uses: fabianofernandeszup/stackspot-github-action-middle-flow/github-actions/stackspot-workflow
+        uses: ./
         with:
           execution-id: "${{ github.event.inputs.execution-id }}"
           client-id: "${{ secrets.CLIENT_ID }}"
