@@ -2,7 +2,7 @@ name: Use StackSpot Workflow
 
 on:
   push:
-    [main]
+    branches: [main]
   workflow_dispatch:
     inputs:
       execution-id:
